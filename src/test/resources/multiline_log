@@ -1,0 +1,9 @@
+01:51:38.841 ..ontent.lib.CStoreDirImpl.setupLog [INFO] Paths info:
+	/scratch/testing/cci
+	/scratch/testing/cci/cci-refs
+	/scratch/testing/cci/cci-refs/state
+	/scratch/testing/cci/cci-refs/dir-objs
+	/scratch/testing/cci/cci-refs/file-info
+	/scratch/testing/cci/cci-refs/patch-info
+	/scratch/testing/cci/cci-refs/patch-objs
+	/scratch/testing/cci/cci-refs/patch-refs
