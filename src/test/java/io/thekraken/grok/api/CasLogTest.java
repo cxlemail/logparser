@@ -21,7 +21,7 @@ public class CasLogTest {
 
     @Test
     public void test001_opatch_cas_log() throws GrokException, IOException {
-        Grok g = Grok.create(ResourceManager.CAS_PATTERNS, "%{TIME}\\s+%{JAVAFILE}\\s+%{OLOGLEVEL}\\s+%{GREEDYDATA}");
+        Grok g = Grok.create(ResourceManager.LOG_4_JAVA_PATTERNS, "%{TIME}\\s+%{JAVAFILE}\\s+%{OLOGLEVEL}\\s+%{GREEDYDATA}");
         
         BufferedReader br = new BufferedReader(new FileReader(LOG_FILE));
         System.out.println("Starting test with opatch cas log");
