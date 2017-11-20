@@ -334,6 +334,40 @@ public class Grok implements Serializable {
     }
     return match;
   }
+  
+  
+  public Match match(String text,Match match) {
+      if (compiledNamedRegex == null || StringUtils.isBlank(text)) {
+        return Match.EMPTY;
+      }
+
+      Matcher m = compiledNamedRegex.matcher(text);
+     
+      if (m.find()) {
+//        match = new Match();
+        match.setSubject(text);
+        match.setGrok(this);
+        match.setMatch(m);
+        match.setStart(m.start(0));
+        match.setEnd(m.end(0));
+      }else{
+          match.setSubject(match.getSubject() + " " + text);
+          match.setGrok(this);
+          match.setMatch(m);
+      }
+      return match;
+    }
+  
+  public boolean isMatch(String text){
+      if (compiledNamedRegex == null || StringUtils.isBlank(text)) {
+          return false;
+        }
+      Matcher m = compiledNamedRegex.matcher(text);
+      if(m.find()){
+          return true;
+      }
+      return false;
+  }
 
   /**
    * Compile the {@code Grok} pattern to named regex pattern.
