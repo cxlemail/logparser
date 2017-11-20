@@ -17,11 +17,11 @@ import static org.junit.Assert.assertNotNull;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CasLogTest {
 
-    public final static String LOG_FILE = "src/test/resources/cas_partly.log";
+    public final static String LOG_FILE = "src/test/resources/multiline_log";
 
     @Test
     public void test001_opatch_cas_log() throws GrokException, IOException {
-        Grok g = Grok.create(ResourceManager.CAS_PATTERNS, "%{TIME}\\s+%{JAVAFILE}\\s+%{OPATCH_LOGLEVEL}\\s+%{GREEDYDATA}");
+        Grok g = Grok.create(ResourceManager.CAS_PATTERNS, "%{TIME}\\s+%{JAVAFILE}\\s+%{OLOGLEVEL}\\s+%{GREEDYDATA}");
         
         BufferedReader br = new BufferedReader(new FileReader(LOG_FILE));
         System.out.println("Starting test with opatch cas log");
